@@ -1,0 +1,5 @@
+.ALIASES
+V_V1            V1(+=N00101 -=0 ) CN @MID1.SCHEMATIC1(sch_1):INS35@SOURCE.VDC.Normal(chips)
+R_R1            R1(1=N00101 2=N00108 ) CN @MID1.SCHEMATIC1(sch_1):INS60@ANALOG.R.Normal(chips)
+C_C1            C1(1=0 2=N00108 ) CN @MID1.SCHEMATIC1(sch_1):INS85@ANALOG.C.Normal(chips)
+.ENDALIASES

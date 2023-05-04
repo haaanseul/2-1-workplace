@@ -1,0 +1,4 @@
+* source MID1
+V_V1         N00101 0 10Vdc
+R_R1         N00101 N00108  1k TC=0,0 
+C_C1         0 N00108  1u IC=0 TC=0,0 
