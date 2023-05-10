@@ -4,14 +4,14 @@ class Heap:
             self.__A = args[0]
         else:
             self.__A = []
-            
+    
     def insert(self, x):
         self.__A.append(x)
         self.__percolateUp(len(self.__A) - 1)
     
     def __percolateUp(self, i):
         parent = (i-1) // 2
-        if i > 0 and self.__A[i] < self.__A[parent]:
+        if i > 0 and self.__A[i][1] < self.__A[parent][1]:
             self.__A[i], self.__A[parent] = self.__A[parent], self.__A[i]
             self.__percolateUp(parent)
     
@@ -30,7 +30,7 @@ class Heap:
         if (child <= len(self.__A)-1):
             if right <= len(self.__A)-1 and self.__A[child] > self.__A[right]:
                 child = right
-            if self.__A[i] > self.__A[child]:
+            if self.__A[i][1] > self.__A[child][1]:
                 self.__A[i], self.__A[child] = self.__A[child], self.__A[i]
                 self.__percolateDown(child)
     
@@ -51,4 +51,27 @@ class Heap:
         return len(self.__A)
     
     def printHeap(self):
-        print(self.__A)
+        count = 0
+        i= 0
+        while(count < len(self.__A)) :
+            p = 2**i
+            for a in range(count, count + p, 1):
+                if a < len(self.__A):
+                    print(self.__A[a], end=' ')
+                    count += 1
+                    
+                else: 
+                    break
+            i +=1                
+            print("\n")
+        print("==================================")
+    def findidx(self, x):
+        for i in range(len(self.__A)):
+            if x == self.__A[i][0]:
+                return i
+        return None
+    
+    def plus_freq(self, x):
+        idx = self.findidx(x)
+        self.__A[idx][1] += 1
+        self.__percolateDown(idx)
