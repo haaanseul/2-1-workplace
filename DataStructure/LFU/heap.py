@@ -28,7 +28,7 @@ class Heap:
         child = 2 * i + 1
         right = 2 * i + 2
         if (child <= len(self.__A)-1):
-            if right <= len(self.__A)-1 and self.__A[child] > self.__A[right]:
+            if right <= len(self.__A)-1 and self.__A[child][1] > self.__A[right][1]:
                 child = right
             if self.__A[i][1] > self.__A[child][1]:
                 self.__A[i], self.__A[child] = self.__A[child], self.__A[i]
@@ -65,6 +65,7 @@ class Heap:
             i +=1                
             print("\n")
         print("==================================")
+
     def findidx(self, x):
         for i in range(len(self.__A)):
             if x == self.__A[i][0]:
