@@ -66,13 +66,13 @@ class Heap:
             print("\n")
         print("==================================")
 
-    def findidx(self, x):
+    def findidx(self, x): # 인덱스 찾기
         for i in range(len(self.__A)):
             if x == self.__A[i][0]:
                 return i
         return None
     
-    def plus_freq(self, x):
+    def plus_freq(self, x): # 빈도수 1 올리기
         idx = self.findidx(x)
         self.__A[idx][1] += 1
         self.__percolateDown(idx)

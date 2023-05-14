@@ -24,7 +24,7 @@ def lfu_sim(cache_slots):
       cache_hit += 1
 
     else:
-        if (lfu_heap.size() == cache_slots) and (lfu_heap.min()[1] <= lfu_freq.get_freq(lpn)):
+        if (lfu_heap.size() == cache_slots):
           page_in_heap.remove(lfu_heap.min()[0])
 
           lfu_heap.deleteMin()
