@@ -25,28 +25,25 @@ def do_sort(input_file):
         C.append(temp)
 
     # -----------기존-----------
-    # for i in range(10):
-    #     print(A[i], end=' ')
-    # print("")
+    for i in range(len(A)-1, len(A)-11, -1):
+        print(A[i], end=' ')
+    print("")
 
     # quickSort(A, 0, len(A)-1)
-    # mergeSort(A, 0, len(A)-1)
+    mergeSort(A, 0, len(A)-1)
 
-    # for i in range(len(A)-1, len(A)-11, -1):
-    #     print(A[i], end=" ")
-    # print("")
+    for i in range(len(A)-1, len(A)-11, -1):
+        print(A[i], end=" ")
+    print("")
     # -----------기존------------
 
 
     # quickSort2(C, 0, len(C)-1)
-    mergeSort2(C, 0, len(C)-1)
+    # mergeSort2(C, 0, len(C)-1)
 
-    for i in range(len(C)-1, len(C)-11, -1):
-        print(C[i][0], C[i][1])
-    print("")
-
-
-
+    # for i in range(len(C)-1, len(C)-11, -1):
+    #     print(C[i][0], C[i][1])
+    # print("")
 
 if __name__ == "__main__":
     do_sort("linkbench_short.trc")

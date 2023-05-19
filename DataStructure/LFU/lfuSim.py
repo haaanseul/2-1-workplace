@@ -10,7 +10,7 @@ def lfu_sim(cache_slots):
   lfu_freq = lpn_freq()
   lfu_heap = Heap()
   
-  # 리스트에 힙에 있는 원소  페이지 저장
+  # 집합에 힙에 있는 원소  페이지 저장
   page_in_heap = set()
 
   for line in data_file.readlines():
@@ -29,9 +29,8 @@ def lfu_sim(cache_slots):
 
           lfu_heap.deleteMin()
           
-        if (lfu_heap.size() < cache_slots):      
-          lfu_heap.insert(lfu_freq.get_list(lpn)) # 리스트를 힙에 삽입
-          page_in_heap.add(lpn)
+        lfu_heap.insert(lfu_freq.get_list(lpn)) # 리스트를 힙에 삽입
+        page_in_heap.add(lpn)
 
   # Program here
   print("cache_slot = ", cache_slots, "cache_hit = ", cache_hit, "hit ratio = ", cache_hit / tot_cnt)

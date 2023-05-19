@@ -37,10 +37,6 @@ class Heap:
     def min(self):
         return self.__A[0]
     
-    def buildHeap(self):
-        for i in range((len(self.__A) - 2) // 2, -1, -1):
-            self.__percolateDown(i)
-    
     def isEmpty(self):
         return len(self.__A) == 0
     
@@ -50,22 +46,6 @@ class Heap:
     def size(self):
         return len(self.__A)
     
-    def printHeap(self):
-        count = 0
-        i= 0
-        while(count < len(self.__A)) :
-            p = 2**i
-            for a in range(count, count + p, 1):
-                if a < len(self.__A):
-                    print(self.__A[a], end=' ')
-                    count += 1
-                    
-                else: 
-                    break
-            i +=1                
-            print("\n")
-        print("==================================")
-
     def findidx(self, x): # 인덱스 찾기
         for i in range(len(self.__A)):
             if x == self.__A[i][0]:
